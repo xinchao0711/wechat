@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>客户资料</title>
+</head>
+<body>
+    <div style="text-align:center;height:130px;background-color: white;display:flex;display: -webkit-flex; align-items:center;">
+        <div class="col-xs-4" style="height:130px;line-height:130px;">
+            {% if user.sex == 'woman' %}
+                    <img src="/static/images/u1208.png" style="height:90%;"/>
+            {% else %}
+                    <img src="/static/images/u1208_man.png" style="height:90%;"/>
+            {% endif %}
+        </div>
+        <div class="col-xs-8" style="padding:0 0 0 0;font-size: 18px;text-align:left;">
+            <div class="col-xs-12">
+                <span>{{ user.name }}&emsp;&emsp;</span>
+                <span>{{ user.birthday}}岁</span>
+            </div>
+             <div class="col-xs-12">
+                <span><img src="/static/images/u1242.png" style="width:30px;"/> {{ user.phone }}</span><span>&emsp;<img src="/static/images/u1244.png" style="width:30px;"/></span>
+            </div>
+             <div class="col-xs-12">
+                <span><img src="/static/images/u1246.png" style="width:30px;"/> {{ user.email }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a>信息咨询</a>
+                    <img style="margin-top:-15px;width:50px;float:right;" src="/static/images/u1222.png" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"/>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body" style="padding:0;">
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        <label>咨询产品：</label><span>百万安康住院医疗险</span>
+                    </div>
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        <label>感兴趣产品类别：</label><span>{{ user.product }}</span>
+                    </div>
+                    <div style="display:flex;display: -webkit-flex; align-items:center;padding:8px 0 8px 10px;border-bottom: 1px solid #ddd">
+                        <label>曾购买产品名称：</label><span>{{ user.remark }}</span>
+                    </div>
+                    <div style="padding:8px 0 8px 10px;border-bottom: 1px solid #ddd">
+                        <label for="name">咨询问题</label>
+                        <textarea class="form-control" rows="2" placeholder="问题描述...">{{ user.question }}</textarea>
+                    </div>
+                    <div style="padding:8px 0 8px 10px;border-bottom: 1px solid #ddd">
+                        <label for="name">其他备注：</label>
+                        <textarea class="form-control" rows="1" placeholder="其他备注描述..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a>测评信息</a>
+                        <img style="margin-top:-15px;width:50px;float:right;" src="/static/images/u1222.png" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"/>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse in">
+                <div class="panel-body" style="padding:0;">
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        <label>居住地：</label><span>{{ user.city }}</span>
+                    </div>
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        <label>职业：</label><span>{{ user.job }}</span>
+                    </div>
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        <label>年薪：</label><span>{{ user.salary }}</span>
+                    </div>
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        {% if user.medicare %}
+                            <label>社保：</label><span>有</span>
+                        {% else %}
+                            <label>社保：</label><span>无</span>
+                        {% endif %}
+                    </div>
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        <label>BMI：</label><span>{{ user.bmi }}</span>
+                    </div>
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        <label>运动：</label><span>平均{{ user.steps }}步/天</span>
+                    </div>
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        {% if user.travel == '0' %}
+                            <label>旅游：</label><span>基本宅在家里</span>
+                        {% elif user.travel == '1' %}
+                            <label>旅游：</label><span>一年1~3次</span>
+                        {% elif user.travel == '2' %}
+                            <label>旅游：</label><span>一年3次以上</span>
+                        {% endif %}
+                    </div>
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        {% if user.family == '0' %}
+                            <label>家庭结构：</label><span>单身贵族</span>
+                        {% elif user.family == '1' %}
+                            <label>家庭结构：</label><span>单身有娃</span>
+                        {% elif user.family == '2' %}
+                            <label>家庭结构：</label><span>已婚无娃</span>
+                        {% elif user.family == '3' %}
+                            <label>家庭结构：</label><span>已婚有娃</span>
+                        {% endif %}
+                    </div>
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        <label>家庭资产：</label><span>{{ user.asset }}</span>
+                    </div>
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        <label>家庭收入：</label><span>{{ user.income }}</span>
+                    </div>
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        <label>贷款总额：</label><span>300万</span>
+                    </div>
+                    <div style="height:40px;line-height: 40px;padding-left:10px;border-bottom: 1px solid #ddd">
+                        <label>每月偿还：</label><span>8000元/月</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 40px;line-height: 40px;background-color: lightpink;text-align: center;border-radius: 10px;">
+        <p>推荐产品</p>
+    </div>
+</body>
+
+<script src=""></script>
+</html>

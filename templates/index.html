@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>个人-基本</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col-xs-12" style="margin-top:15px;">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 0%;">
+                    <span class="sr-only"></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h4>您的个人信息</h4>
+            <div class="col-xs-12">
+                <div class="col-xs-3" style="padding-top: 20px;"><span>性别：</span></div>
+                <div class="col-xs-3">
+                    <img id="man_icon" onclick="chooseman()" src="/static/images/man.png" class="img-circle"/>
+                </div>
+                <div class="col-xs-3">
+                    <img id="woman_icon" onclick="choosewoman()" src="/static/images/woman.png" class="img-circle"/>
+                </div>
+            </div>
+            <div class="col-xs-12" style="padding-top: 20px;">
+                <div class="col-xs-3" style="padding-top: 5px;padding-right: 0px;"><span>出生日期：</span></div>
+                <div class="col-xs-8" style="padding-right: 0px;"><input id="birth_date" type="date" value="1980-01-01" min="1920-01-01" max="2020-12-31" class="form-control"></div>
+                <!--<div class="col-xs-2"><img src="/static/images/calendar.png" class="img-rounded" style="width: 30px;height: 30px;"></div>-->
+            </div>
+            <div class="col-xs-12" style="padding-top: 20px;">
+                <div class="col-xs-3" style="padding-top: 5px;padding-right: 0px;"><span>居住地：</span></div>
+                <div class="col-xs-7">
+                    <a>定位</a>&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger btn-sm">&nbsp;北京&nbsp;</button>
+                </div>
+                <div class="col-xs-7 col-xs-offset-3">
+                    <a>不是北京请选择</a>
+                    <select id="place" class="form-control">
+                      <option>北京</option>
+                      <option>上海</option>
+                      <option>天津</option>
+                      <option>重庆</option>
+                      <option>广州</option>
+                      <option>深圳</option>
+                      <option>杭州</option>
+                      <option>苏州</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12" style="padding-top: 20px;">
+                <ul class="pager">
+                    <!-- 
+                    <li class="previous disabled"><a href="#"> 上一步</a></li>
+-->
+                    <li class="next"><a onclick="index_next()">下一步 </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/static/js/index.js"></script>
+</html>

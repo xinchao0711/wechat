@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>业务员</title>
+</head>
+<body>
+    <div class="container">
+        <div onclick="to_customer('{{openid}}')" style="border-radius: 10px;height: 150px;margin-top:15px;background-color: lightpink;">
+                <div style="position: absolute;left: 30%;width: 40%;height: 150px;line-height: 150px;text-align: center;">
+                    <img src="/static/images/u1181.png" style="width: 130px;"/>
+                </div>
+                <div style="position: absolute;left: 30%;width: 40%;height: 150px;line-height: 150px;text-align: center;">
+                    <img src="/static/images/u1179.png" style="width: 110px;"/>
+                </div>
+                <div style="position: absolute;left:63%;margin-top:10px;width: 40%;height: 30px;line-height: 30px;">
+                    <img src="/static/images/u1185.png" style="width: 20px;"/>
+                    <div style="position:absolute;left:0;top:0;width:20px;text-align: center;">
+                        <span style="color:white;">{{user_num}}</span>
+                    </div>
+                    <div style="position:absolute;left:20px;top:0;width: 70%;">
+                        <spap> 您有新的客户，</spap>
+                        <span> 请查看！</span>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+
+<script src="/static/js/salesman_alert.js"></script>
+</html>

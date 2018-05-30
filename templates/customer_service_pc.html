@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>客服</title>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="col-lg-12" style="height:60px;line-height:60px;background-color:#c8edf1;text-align:center;">
+		<span style="font-size:30px;">客户信息</span>
+	</div>
+	<div class="col-lg-12" style="height:200px;border:2px solid pink;border-radius:20px;margin-top:10px;text-align:center;">
+		<div class="row" style="margin-top:10px;font-size:20px;">客 户 标 签</div>
+		<div class="row" style="width:80%;margin-left:10%;">
+			<div class="col-xs-4" style="position:relative;height:80px;line-height:80px;">
+				<img src="/static/images/u1028.png" style="width:90%;height:80px;"/>
+				<div style="position:absolute;left:0;width:100%;top:0;height:80px;line-height:80px;font-size:20px;">
+                    {% if user_dict.sex == 'woman' %}
+            		<span>{{ user_dict.birthday }}岁 女性</span>
+                    {% else %}
+                    <span>{{ user_dict.birthday }}岁 男性</span>
+                    {% endif %}
+				</div>				
+			</div>
+			<div class="col-xs-4" style="position:relative;height:80px;line-height:80px;">
+				<img src="/static/images/u1028.png" style="width:90%;height:80px;"/>
+				<div style="position:absolute;left:0;width:100%;top:0;height:80px;line-height:80px;font-size:20px;">
+					<span>中高收入人群</span>
+				</div>				
+			</div>
+			<div class="col-xs-4" style="position:relative;height:80px;line-height:80px;">
+				<img src="/static/images/u1028.png" style="width:90%;height:80px;"/>
+				<div style="position:absolute;left:0;width:100%;top:0;height:80px;line-height:80px;font-size:20px;">
+					<span>身体健康</span>
+				</div>				
+			</div>
+			<div class="col-xs-4" style="position:relative;height:80px;line-height:80px;">
+				<img src="/static/images/u1028.png" style="width:90%;height:80px;"/>
+				<div style="position:absolute;left:0;width:100%;top:0;height:80px;line-height:80px;font-size:20px;">
+					<span>身体健康</span>
+				</div>				
+			</div>
+			<div class="col-xs-4" style="position:relative;height:80px;line-height:80px;">
+				<img src="/static/images/u1028.png" style="width:90%;height:80px;"/>
+				<div style="position:absolute;left:0;width:100%;top:0;height:80px;line-height:80px;font-size:20px;">
+					<span>身体健康</span>
+				</div>				
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-lg-12" style="border:2px solid pink;border-radius:20px;margin-top:10px;">
+		<div class="row" style="margin-top:10px;font-size:20px;text-align:center;">补充信息记录</div>
+
+		<form class="form-horizontal" role="form" style="font-size:16px;" action="/aiins/customer_service_pc/submitData/" method="get">
+
+		  <div class="form-group">
+			<label for="firstname" class="col-sm-2 control-label">名字：</label>
+			<div class="col-sm-5">
+			  <span>百万安康住院医疗险</span>
+			</div>
+            <div class="col-sm-offset-3 col-sm-2">
+			  <button type="button" class="btn btn-default" onclick="get_form_data()"> &emsp; 保存 &emsp; </button>
+              <!--
+              <input type="submit" value="保存"/>
+				-->
+			</div>
+		  </div>
+
+		  <div class="form-group">
+			<label for="name" class="col-sm-2 control-label">称呼：</label>
+			<div class="col-sm-2">
+			  <input type="text" class="form-control" id="name" name="name"><!--注意if与for对应-->
+			</div>
+			<div class="col-sm-8">
+				<label class="radio-inline">
+                    <input type="radio" name="sex_select" id="man" value="man" checked> 男士
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="sex_select" id="woman"  value="woman"> 女士
+                </label>
+			</div>
+		  </div>
+		  
+		  <div class="form-group">
+			<label class="col-sm-2 control-label">手机：</label>
+			<div class="col-sm-2">
+			  <input type="text" class="form-control" id="phone">
+			</div>
+			<label class="col-sm-2 control-label">邮箱：</label>
+			<div class="col-sm-3">
+			  <input type="text" class="form-control" id="email">
+			</div>
+		  </div>
+		  
+		  <div class="form-group">
+			<label class="col-sm-2 control-label">感兴趣产品类别：</label>
+			<div class="col-sm-2">
+			  <input type="text" class="form-control" id="product">
+			</div>
+			<div class="col-sm-2">
+				<select class="form-control">
+				  <option></option>
+				  <option>健康</option>
+				  <option>财产</option>
+				  <option>意外</option>
+				  <option>寿险</option>
+				</select>
+			</div>			
+		  </div>
+		  
+		  <div class="form-group">
+			<label class="col-sm-2 control-label">咨询问题：</label>
+			<div class="col-sm-8">
+			  <textarea class="form-control" rows="3" id="question"></textarea>
+			</div>			
+		  </div>
+		  
+		  <div class="form-group">
+			<label class="col-sm-2 control-label">是否买过保险：</label>
+			<div class="col-sm-1">
+				<label class="checkbox-inline">
+					<input type="checkbox" id="buyins" value="true" name="buyins"> 是
+			    </label>
+			</div>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" placeholder="请输入产品名称" id="remark"><!--注意if与for对应-->
+			</div>			
+		  </div>
+
+		</form>
+	</div>
+	<div class="col-lg-12" style="border:2px solid pink;border-radius:20px;margin-top:10px;padding-top:20px;text-align:center;">
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="col-sm-2 control-label" >将客户分配给：</label>
+				<div class="col-sm-1">
+				<select class="form-control" id="employee_select">
+				  	<option></option>
+				  	{% for employee in employees %}
+				  	<option value="{{ employee.openid }}">{{ employee.name }}</option>
+				  	{% endfor %}
+					</select>
+				</div>
+				<div class="col-sm-2">
+					<label>推荐分配给：<span size="5" color="blue">张三</span></label>
+				</div>
+				<div class="col-sm-1">
+					<button type="button" onclick="set_employee('{{user_dict.openid}}')">确定</button>
+				</div>
+			</div>			
+		</form>		
+	</div>
+	<div class="col-lg-12" style="border:2px solid pink;border-radius:20px;margin-top:10px;text-align:center;">
+		<div class="row" style="margin-top:0px;font-size:20px;text-align:center;background-color:#FF99CC;border-radius:20px">测评信息</div>
+		<div class="row" style="text-align:left;">
+			<div class="col-sm-2" style="margin-top:5px;border:2px solid pink;border-radius:20px;">个人信息</div>
+			<div class="row" style="border:2px solid pink;margin-top:0px;border-radius:20px"></div>
+
+			<div class="col-sm-12">
+				<form class="form-horizontal" role="form" style="font-size:16px;">
+					<div class="col-sm-4">
+                        {% if user_dict.sex == 'woman' %}
+						<label for="sex">性别：<span id="sex"> 女</span></label>
+                        {% else %}
+                        <label for="sex">性别：<span id="sex"> 男</span></label>
+                        {% endif %}
+					</div>
+					<div class="col-sm-4">
+						<label for="age">年龄：<span id="age">{{ user_dict.birthday }}岁</span></label>
+					</div>
+					<div class="col-sm-4">
+						<label for="city">居住地：<span id="city">{{ user_dict.city }}</span></label>
+					</div>			
+				</form>
+			</div>
+
+			<div class="col-sm-12">
+				<form class="form-horizontal" role="form" style="font-size:16px;">
+					<div class="col-sm-4">
+						<label for="job">职业：<span id="job">{{ user_dict.job }}</span></label>
+					</div>
+					<div class="col-sm-4">
+						<label for="salary">年薪范围：<span id="salary">{{ user_dict.salary }}</span></label>
+					</div>
+					<div class="col-sm-4">
+                        {% if user_dict.medicare == 'true' %}
+						<label for="soc_insurance">社保：<span id="soc_insurance">有</span></label>
+                        {% else %}
+                        <label for="soc_insurance">社保：<span id="soc_insurance">无</span></label>
+                        {% endif %}
+					</div>		
+				</form>
+			</div>
+
+			<div class="col-sm-12">
+				<form class="form-horizontal" role="form" style="font-size:16px;">
+					<div class="col-sm-4">
+						<label for="height">身高：<span id="height">{{ user_dict.height }}cm</span></label>
+					</div>
+					<div class="col-sm-4">
+						<label for="weight">体重：<span id="weight">{{ user_dict.weight }}kg</span></label>
+					</div>
+					<div class="col-sm-4">
+						<label for="bmi">BMI：<span id="bmi">{{ user_dict.bmi }}</span></label>
+					</div>			
+				</form>
+			</div>
+
+			<div class="col-sm-12">
+				<form class="form-horizontal" role="form" style="font-size:16px;">
+					<div class="col-sm-4">
+						<label for="steps">运动：<span id="steps">平均{{ user_dict.steps }}步/天</span></label>
+					</div>
+					<div class="col-sm-4">
+                        {% if user_dict.travel == '2' %}
+						<label for="travel_num">旅游频次：<span id="travel_num">每年3次以上</span></label>
+                        {% elif user_dict.travel == '1' %}
+                        <label for="travel_num">旅游频次：<span id="travel_num">每年1~3次</span></label>
+                        {% else %}
+                        <label for="travel_num">旅游频次：<span id="travel_num">基本宅在家里不出门</span></label>
+                        {% endif %}
+					</div>		
+				</form>
+			</div>
+		</div>
+
+		<div class="row" style="text-align:left;">
+			<div class="col-sm-2" style="margin-top:5px;border:2px solid pink;border-radius:20px;">家庭信息</div>
+			<div class="row" style="border:2px solid pink;margin-top:0px;border-radius:20px"></div>
+
+			<div class="col-sm-12">
+				<form class="form-horizontal" role="form" style="font-size:16px;">
+					<div class="col-sm-4">
+                        {% if user_dict.family == '0' %}
+						<label for="fami_struct">家庭结构：<span id="fami_struct">单身贵族</span></label>
+                        {% elif user_dict.family == '1' %}
+                        <label for="fami_struct">家庭结构：<span id="fami_struct">单身有娃</span></label>
+                        {% elif user_dict.family == '2' %}
+                        <label for="fami_struct">家庭结构：<span id="fami_struct">已婚无娃</span></label>
+                        {% else %}
+                        <label for="fami_struct">家庭结构：<span id="fami_struct">已婚有娃</span></label>
+                        {% endif %}
+					</div>
+					<div class="col-sm-4">
+						<label for="fami_faninace">家庭资产：<span id="fami_faninace">{{ user_dict.asset }}</span></label>
+					</div>
+					<div class="col-sm-4">
+						<label for="fami_income">家庭收入：<span id="fami_income">50万/年</span></label>
+					</div>			
+				</form>
+			</div>
+
+			<div class="col-sm-12">
+				<form class="form-horizontal" role="form" style="font-size:16px;">
+					<div class="col-sm-4">
+						<label for="loan">贷款总额：<span id="loan">300万</span></label>
+					</div>
+					<div class="col-sm-4">
+						<label for="repay">每月偿还：<span id="repay">8000元/月</span></label>
+					</div>	
+				</form>
+			</div>			
+		</div>
+	</div>	
+</body>
+    <script src="/static/js/customer_service_pc.js"></script>
+</html>

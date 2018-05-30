@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>个人-基本</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col-xs-12" style="margin-top:15px;">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 40%;">
+                    <span class="sr-only">40% 完成</span>
+                </div>
+            </div>
+        </div>
+        <h4>您的个人信息</h4>
+        <div class="col-xs-12">
+            <div class="col-xs-3" style="padding-top: 8px;"><span>身高：</span></div>
+            <div class="col-xs-7" style="padding-right: 0px;"><input id="height" type="text" class="form-control" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"></div>&nbsp;cm
+        </div>
+        <div class="col-xs-12" style="padding-top: 20px;">
+            <div class="col-xs-3" style="padding-top: 8px;"><span>体重：</span></div>
+            <div class="col-xs-7" style="padding-right: 0px;"><input id="weight" type="text" class="form-control" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')};cal_bmi()" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')};cal_bmi()"></div>&nbsp;kg
+        </div>
+        <div class="col-xs-12" style="padding-top: 20px;">
+            <div class="col-xs-3" style="padding-top: 8px;"><span>BMI：</span></div>
+            <div class="col-xs-7" style="padding-right: 0px;"><input id="bmi" type="text" class="form-control" disabled= "true "></div>
+        </div>
+        <div class="col-xs-12" style="margin: 20px 0px 20px 0px;background: url('/static/images/u190.png')">
+            <div class="col-xs-2">
+                <img src="/static/images/u192.png"/>
+            </div>
+            <div class="col-xs-10" style="margin-top:30px;font-size: 17px;color:orangered;">
+                <p>BMI指数为身体健康指标之一</p>
+                <p>正常BMI指数范围为：18.5-23.9</p>
+                <p>您的身体年龄为<span style="font-size:30px;">&nbsp;18&nbsp;</span>岁!</p>
+            </div>
+        </div>
+        <div class="col-xs-12" style="padding-top: 20px;">
+            <div class="col-xs-3" style="padding-top: 8px;"><span>每天运动约：</span></div>
+            <div class="col-xs-7" style="padding-right: 0px;"><input id="step_num" type="text" class="form-control" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"></div>&nbsp;步
+        </div>
+        <div class="col-xs-12" style="padding-top: 20px;">
+            <ul class="pager">
+                <li class="previous"><a href="javascript:history.go(-1)"> 上一步</a></li>
+                <li class="next"><a onclick="health_next()">下一步 </a></li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+<script src="/static/js/health.js"></script>
+</html>

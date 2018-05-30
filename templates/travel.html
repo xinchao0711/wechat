@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        var freq;
+    </script>
+    <title>个人-基本</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col-xs-12" style="margin-top:15px;">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 100%;">
+                    <span class="sr-only">100% 完成</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="row" style="background-color: #57b2b1;height:25px;line-height:25px;">
+                <p style="font-size:16px;color:white;">&nbsp;&nbsp;最后一页啦，我就还想问问你......</p>
+            </div>
+            <div class="row" style="margin-top:20px;">
+                <p style="font-size:20px;">&nbsp;&nbsp;一年旅游几次啊？</p>
+            </div>
+        <div>
+        <div id="travel_0" onclick="travel_sel(this)" class="col-xs-12" style="border-radius:10px;border:1px solid #b2b2b2;margin-bottom: 10px;">
+            <div class="col-xs-4" style="padding-left:0px;"><img src="/static/images/u444.png" style="height:75px;width:100px;"/></div>
+            <div class="col-xs-8" style="height:75px;line-height:75px;font-size:15px;"><span>不爱出门就爱宅</span></div>
+        </div>
+        <div id="travel_1" onclick="travel_sel(this)" class="col-xs-12" style="border-radius:10px;border:1px solid #b2b2b2;margin-bottom: 10px;">
+            <div class="col-xs-4" style="padding-left:0px;"><img src="/static/images/u452.png" style="height:75px;width:100px;"/></div>
+            <div class="col-xs-8" style="height:75px;line-height:75px;font-size:15px;"><span>标准游客，1~3次吧</span></div>
+        </div>
+        <div id="travel_2" onclick="travel_sel(this)" class="col-xs-12" style="border-radius:10px;border:1px solid #b2b2b2;margin-bottom: 10px;">
+            <div class="col-xs-4" style="padding-left:0px;"><img src="/static/images/u458.png" style="height:75px;width:100px;"/></div>
+            <div class="col-xs-8" style="height:75px;line-height:75px;font-size:15px;"><span>没事就疯玩，3次以上</span></div>
+        </div>
+
+        <div class="col-xs-12" style="padding-top: 20px;">
+            <ul class="pager">
+                
+                <li class="previous"><a href="javascript:history.go(-1)">上一步</a></li>
+
+                <li class="next"><a onclick="travel_next()">查看评测结果</a></li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+<script src="/static/js/travel.js"></script>
+</html>

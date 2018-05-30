@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>个人-基本</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col-xs-12" style="margin-top:15px;">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 20%;">
+                    <span class="sr-only">20% 完成</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h4>您的职业信息</h4>
+            <div class="col-xs-12">
+                <div class="col-xs-4" style="margin-top: 8px;"><span>目前职业：</span></div>
+                <div class="col-xs-7">
+                    <select id="job_type" class="form-control">
+                      <option>请选择</option>
+                      <option>一般职业</option>
+                      <option>农畜牧业</option>
+                      <option>白领</option>
+                      <option>教育行业</option>
+                      <option>国企央企</option>
+                      <option>科研人员</option>
+                      <option>工人</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12" style="padding-top: 20px;">
+                <div class="col-xs-4" style="margin-top: 8px;"><span>年薪：</span></div>
+                <div class="col-xs-6">
+                    <select id="salary" class="form-control">
+                      <option>1万~10万</option>
+                      <option>10万~20万</option>
+                      <option>20万~50万</option>
+                      <option>50万~100万</option>
+                      <option>100万~200万</option>
+                      <option>200万~500万</option>
+                      <option>500万~2000万</option>
+                      <option>2000万以上</option>
+                    </select>
+                </div>万/年
+            </div>
+            <div class="col-xs-12" style="padding-top: 20px;">
+                <p>是否有社会医疗保险：</p>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="true" checked> 是
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="false"> 否
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-xs-12" style="padding-top: 20px;">
+                <ul class="pager">
+                    <li class="previous"><a onclick="javascript:history.go(-1)"> 上一步</a></li>
+                    <li class="next"><a onclick="job_next()">下一步 </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/js/job.js"></script>
+</html>
